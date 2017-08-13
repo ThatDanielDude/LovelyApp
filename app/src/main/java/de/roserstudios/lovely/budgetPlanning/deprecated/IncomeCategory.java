@@ -1,4 +1,4 @@
-package de.roserstudios.lovely.budgetPlanning;
+package de.roserstudios.lovely.budgetPlanning.deprecated;
 
 /**
  * Created by danie_000 on 12.08.2017.

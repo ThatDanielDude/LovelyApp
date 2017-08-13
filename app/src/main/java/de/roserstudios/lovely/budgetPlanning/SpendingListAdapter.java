@@ -1,6 +1,8 @@
 package de.roserstudios.lovely.budgetPlanning;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +10,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 import de.roserstudios.lovely.R;
 
@@ -19,9 +20,9 @@ import de.roserstudios.lovely.R;
 public class SpendingListAdapter extends BaseAdapter {
 
     Context context;
-    List<Expense> list;
+    List<Entry> list;
 
-    public SpendingListAdapter(Context context, List<Expense> list){
+    public SpendingListAdapter(Context context, List<Entry> list){
         this.context = context;
         this.list = list;
     }
@@ -50,7 +51,7 @@ public class SpendingListAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.fragment_budget_planning_spendings_list_item, viewGroup, false);
             holder = new ViewHolder();
 
-            holder.categorie = (TextView) view.findViewById(R.id.f_spendings_list_item_tv_categorie);
+            holder.category = (TextView) view.findViewById(R.id.f_spendings_list_item_tv_categorie);
             holder.description = (TextView) view.findViewById(R.id.f_spendings_list_item_tv_description);
             holder.amount = (TextView) view.findViewById(R.id.f_spendings_list_item_tv_amount);
 
@@ -59,17 +60,18 @@ public class SpendingListAdapter extends BaseAdapter {
 
         holder = (ViewHolder) view.getTag();
 
-        Expense e = (Expense)getItem(i);
-
-        holder.categorie.setText(e.getCategory().toString());
+        Entry e = (Entry)getItem(i);
+        holder.category.setText(e.getCategory().toString());
         holder.description.setText(e.getDescription());
-        holder.amount.setText(e.getStringAmount());
+        //Set color to green if the amount is larger then 0
+        holder.amount.setTextColor((e.getAmount() < 0) ? Color.RED : Color.GREEN);
+        holder.amount.setText(e.getAmountString());
 
         return view;
     }
 
     class ViewHolder{
-        private TextView categorie;
+        private TextView category;
         private TextView description;
         private TextView amount;
     }

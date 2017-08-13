@@ -1,4 +1,4 @@
-package de.roserstudios.lovely.budgetPlanning;
+package de.roserstudios.lovely.budgetPlanning.deprecated;
 
 /**
  * Created by danie_000 on 12.08.2017.
@@ -6,19 +6,14 @@ package de.roserstudios.lovely.budgetPlanning;
 
 public class Income {
 
+
+
+    /*
     private long _id;
     private IncomeCategory category;
     private double amount;
     private long time;
-
-    public long getTime() {
-        return time;
-    }
-
-    public void setTime(long time) {
-        this.time = time;
-    }
-
+    private int dayOfMonth;
     private String amountString;
 
     public Income(IncomeCategory category, double amount, String amountString) {
@@ -31,6 +26,24 @@ public class Income {
         this._id = _id;
         this.category = category;
         this.amount = amount;
+        this.time = time;
+    }
+
+    public Income(long _id, IncomeCategory category, double amount, long time, int dayOfMonth) {
+        this._id = _id;
+        this.category = category;
+        this.amount = amount;
+        this.time = time;
+        this.dayOfMonth = dayOfMonth;
+    }
+
+    public int getDayOfMonth(){ return this.dayOfMonth; }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
         this.time = time;
     }
 
@@ -52,7 +65,7 @@ public class Income {
         this.amount = amount;
     }
 
-    public String getAmountString() { return String.format("%.2f€", amount); }
+    public String getAmountString() { return String.format("+%.2f€", amount); }
 
 
     @Override
@@ -63,4 +76,7 @@ public class Income {
                 ", amountString='" + amountString + '\'' +
                 '}';
     }
+
+
+    */
 }

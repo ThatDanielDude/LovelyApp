@@ -10,6 +10,7 @@
     android:orientation="vertical">
 
     <include
+        android:id="@+id/fragment_budget_planning_spendings_itm_currentBalance"
         layout="@layout/fragment_budget_planning_spendings_list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
