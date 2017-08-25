@@ -5,12 +5,18 @@ package de.roserstudios.lovely.budgetPlanning;
  */
 
 public enum EntryCategory {
-    FOOD,
-    RENT,
-    CELLPHONE,
-    INTERNET_AND_PHONE,
-    MONTHLY_EXPENSE,
-    SALARY,
-    EXTRA,
-    EXTRA_MONTHLY
+    FOOD("food"),
+    HOUSE_HOLD("something for the apartment"),
+    SAVING("saving"),
+    GIFT("gift"),
+    UNUSUAL("unusual"),
+    INCOME("extra income"),
+    CELLPHONE("CELLPHONE"),
+    RENT("");
+
+    private String text;
+
+    EntryCategory(String text){
+        this.text = text;
+    }
 }

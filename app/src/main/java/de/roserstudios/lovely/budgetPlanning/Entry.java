@@ -2,6 +2,8 @@ package de.roserstudios.lovely.budgetPlanning;
 
 import android.icu.util.ULocale;
 
+import java.util.Calendar;
+
 /**
  * Created by danie_000 on 13.08.2017.
  */
@@ -21,6 +23,14 @@ public class Entry {
         this.description = description;
         this.amount = amount;
         this.category = category;
+    }
+
+    public Entry(String description, double amount, String category){
+        this._id = -1;
+        this.timeOfOccurrence = Calendar.getInstance().getTimeInMillis();
+        this.description = description;
+        this.amount = amount;
+        this.category = EntryCategory.valueOf(category);
     }
 
     public long get_id() {

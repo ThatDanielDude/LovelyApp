@@ -9,6 +9,40 @@
     tools:context="de.roserstudios.lovely.model.BudgetPlanningActivity$PlaceholderFragment"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/fragment_budget_planning_spendings_edt_dateFrom"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="date|none"
+            android:hint="from"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/fragment_budget_planning_spendings_edt_dateTo"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="date|none"
+            android:hint="until"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/fragment_budget_planning_spendings_btn_refreshList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Refresh" />
+
+    </LinearLayout>
+
     <include
         android:id="@+id/fragment_budget_planning_spendings_itm_currentBalance"
         layout="@layout/fragment_budget_planning_spendings_list_item"
@@ -18,7 +52,7 @@
     <ListView
         android:id="@+id/fragment_budget_planning_spendings_lv_spendings"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="390dp" />
 
 
 </LinearLayout>

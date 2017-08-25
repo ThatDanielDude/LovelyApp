@@ -19,7 +19,8 @@
         <activity
             android:name=".model.BudgetPlanningActivity"
             android:label="@string/title_activity_budget_planning"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustUnspecified">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

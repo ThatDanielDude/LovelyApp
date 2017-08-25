@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import de.roserstudios.lovely.R;
+import de.roserstudios.lovely.budgetPlanning.Entry;
 import de.roserstudios.lovely.tabs.FragmentBudgetPlanning_AddExpense;
 import de.roserstudios.lovely.tabs.FragmentBudgetPlanning_BudgetPlan;
 import de.roserstudios.lovely.tabs.FragmentBudgetPlanning_Spendings;
@@ -40,9 +41,9 @@ public class BudgetPlanningActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    private String mTab1Name = "Spendings";
-    private String mTab2Name = "Add Expense";
-    private String mTab3Name = "Budget Plan";
+    private String mTab1Name = "Spending";
+    private String mTab2Name = "Add entry";
+    private String mTab3Name = "Add monthly entry";
 
 
 
@@ -63,17 +64,6 @@ public class BudgetPlanningActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-
 
     }
 
@@ -182,4 +172,7 @@ public class BudgetPlanningActivity extends AppCompatActivity {
             return null;
         }
     }
+
+
+
 }

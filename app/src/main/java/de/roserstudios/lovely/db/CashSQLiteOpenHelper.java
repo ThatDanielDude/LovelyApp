@@ -123,13 +123,17 @@ public class CashSQLiteOpenHelper extends SQLiteOpenHelper {
         return new ReoccurringEntry(rowID, time, description, amount, category, dayOfMonth);
     }
 
+    public boolean deleteEntry(long id, long time){
+        return 1 == getWritableDatabase().delete(TABLE_ENTRIES, id + "=" + COL_ENTRIES_ID + " AND "
+                + time + "=" + COL_ENTRIES_TIME, null);
+    }
     public List<Entry> getEntriesBetween(long from, long to) {
         SQLiteDatabase db = getReadableDatabase();
         List<Entry> list = new Vector<>();
 
         Cursor c = db.query(TABLE_ENTRIES, COLS_ENTRIES,
                 COL_ENTRIES_TIME + ">=" + from + " AND " + COL_ENTRIES_TIME + "<=" + to,
-                null, null, null, null);
+                null, null, null, COL_ENTRIES_TIME + " DESC");
 
         c.moveToFirst();
         while (!c.isAfterLast()) {

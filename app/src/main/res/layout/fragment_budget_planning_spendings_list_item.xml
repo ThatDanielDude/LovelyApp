@@ -34,7 +34,7 @@
             android:layout_alignBottom="@+id/f_spendings_list_item_tv_description"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/f_spendings_list_item_tv_description"
-            android:text="135,78 €"
+            android:text="0,0 €"
             android:textAlignment="textEnd"
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
             android:textColor="@android:color/holo_red_dark"
